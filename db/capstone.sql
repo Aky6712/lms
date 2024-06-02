@@ -1,11 +1,11 @@
 -- phpMyAdmin SQL Dump
--- version 5.0.2
+-- version 5.2.1
 -- https://www.phpmyadmin.net/
 --
 -- Host: 127.0.0.1
--- Generation Time: Dec 21, 2020 at 03:46 AM
--- Server version: 10.4.14-MariaDB
--- PHP Version: 7.2.33
+-- Generation Time: Jun 02, 2024 at 10:22 AM
+-- Server version: 10.4.32-MariaDB
+-- PHP Version: 8.2.12
 
 SET SQL_MODE = "NO_AUTO_VALUE_ON_ZERO";
 START TRANSACTION;
@@ -32,7 +32,7 @@ CREATE TABLE `activity_log` (
   `username` varchar(100) NOT NULL,
   `date` varchar(100) NOT NULL,
   `action` varchar(100) NOT NULL
-) ENGINE=InnoDB DEFAULT CHARSET=latin1;
+) ENGINE=InnoDB DEFAULT CHARSET=latin1 COLLATE=latin1_swedish_ci;
 
 --
 -- Dumping data for table `activity_log`
@@ -62,7 +62,7 @@ CREATE TABLE `answer` (
   `quiz_question_id` int(11) NOT NULL,
   `answer_text` varchar(100) NOT NULL,
   `choices` varchar(3) NOT NULL
-) ENGINE=InnoDB DEFAULT CHARSET=latin1;
+) ENGINE=InnoDB DEFAULT CHARSET=latin1 COLLATE=latin1_swedish_ci;
 
 --
 -- Dumping data for table `answer`
@@ -96,7 +96,7 @@ CREATE TABLE `assignment` (
   `teacher_id` int(11) NOT NULL,
   `class_id` int(11) NOT NULL,
   `fname` varchar(100) NOT NULL
-) ENGINE=InnoDB DEFAULT CHARSET=latin1;
+) ENGINE=InnoDB DEFAULT CHARSET=latin1 COLLATE=latin1_swedish_ci;
 
 --
 -- Dumping data for table `assignment`
@@ -138,7 +138,7 @@ INSERT INTO `assignment` (`assignment_id`, `floc`, `fdatein`, `fdesc`, `teacher_
 CREATE TABLE `class` (
   `class_id` int(11) NOT NULL,
   `class_name` varchar(100) NOT NULL
-) ENGINE=InnoDB DEFAULT CHARSET=latin1;
+) ENGINE=InnoDB DEFAULT CHARSET=latin1 COLLATE=latin1_swedish_ci;
 
 --
 -- Dumping data for table `class`
@@ -172,7 +172,7 @@ CREATE TABLE `class_quiz` (
   `teacher_class_id` int(11) NOT NULL,
   `quiz_time` int(11) NOT NULL,
   `quiz_id` int(11) NOT NULL
-) ENGINE=InnoDB DEFAULT CHARSET=latin1;
+) ENGINE=InnoDB DEFAULT CHARSET=latin1 COLLATE=latin1_swedish_ci;
 
 --
 -- Dumping data for table `class_quiz`
@@ -195,7 +195,7 @@ CREATE TABLE `class_subject_overview` (
   `class_subject_overview_id` int(11) NOT NULL,
   `teacher_class_id` int(11) NOT NULL,
   `content` varchar(10000) NOT NULL
-) ENGINE=InnoDB DEFAULT CHARSET=latin1;
+) ENGINE=InnoDB DEFAULT CHARSET=latin1 COLLATE=latin1_swedish_ci;
 
 --
 -- Dumping data for table `class_subject_overview`
@@ -214,7 +214,7 @@ CREATE TABLE `content` (
   `content_id` int(11) NOT NULL,
   `title` varchar(100) NOT NULL,
   `content` mediumtext NOT NULL
-) ENGINE=InnoDB DEFAULT CHARSET=latin1;
+) ENGINE=InnoDB DEFAULT CHARSET=latin1 COLLATE=latin1_swedish_ci;
 
 --
 -- Dumping data for table `content`
@@ -245,7 +245,7 @@ CREATE TABLE `department` (
   `department_id` int(11) NOT NULL,
   `department_name` varchar(100) NOT NULL,
   `dean` varchar(100) NOT NULL
-) ENGINE=InnoDB DEFAULT CHARSET=latin1;
+) ENGINE=InnoDB DEFAULT CHARSET=latin1 COLLATE=latin1_swedish_ci;
 
 --
 -- Dumping data for table `department`
@@ -269,7 +269,7 @@ CREATE TABLE `event` (
   `teacher_class_id` int(11) NOT NULL,
   `date_start` varchar(100) NOT NULL,
   `date_end` varchar(100) NOT NULL
-) ENGINE=InnoDB DEFAULT CHARSET=latin1;
+) ENGINE=InnoDB DEFAULT CHARSET=latin1 COLLATE=latin1_swedish_ci;
 
 --
 -- Dumping data for table `event`
@@ -299,7 +299,7 @@ CREATE TABLE `files` (
   `class_id` int(11) NOT NULL,
   `fname` varchar(100) NOT NULL,
   `uploaded_by` varchar(100) NOT NULL
-) ENGINE=MyISAM DEFAULT CHARSET=latin1;
+) ENGINE=MyISAM DEFAULT CHARSET=latin1 COLLATE=latin1_swedish_ci;
 
 --
 -- Dumping data for table `files`
@@ -344,7 +344,7 @@ CREATE TABLE `message` (
   `reciever_name` varchar(50) NOT NULL,
   `sender_name` varchar(200) NOT NULL,
   `message_status` varchar(100) NOT NULL
-) ENGINE=InnoDB DEFAULT CHARSET=latin1;
+) ENGINE=InnoDB DEFAULT CHARSET=latin1 COLLATE=latin1_swedish_ci;
 
 --
 -- Dumping data for table `message`
@@ -373,7 +373,7 @@ CREATE TABLE `message_sent` (
   `sender_id` int(11) NOT NULL,
   `reciever_name` varchar(100) NOT NULL,
   `sender_name` varchar(100) NOT NULL
-) ENGINE=InnoDB DEFAULT CHARSET=latin1;
+) ENGINE=InnoDB DEFAULT CHARSET=latin1 COLLATE=latin1_swedish_ci;
 
 --
 -- Dumping data for table `message_sent`
@@ -402,7 +402,7 @@ CREATE TABLE `notification` (
   `notification` varchar(100) NOT NULL,
   `date_of_notification` varchar(50) NOT NULL,
   `link` varchar(100) NOT NULL
-) ENGINE=InnoDB DEFAULT CHARSET=latin1;
+) ENGINE=InnoDB DEFAULT CHARSET=latin1 COLLATE=latin1_swedish_ci;
 
 --
 -- Dumping data for table `notification`
@@ -443,7 +443,7 @@ CREATE TABLE `notification_read` (
   `student_id` int(11) NOT NULL,
   `student_read` varchar(50) NOT NULL,
   `notification_id` int(11) NOT NULL
-) ENGINE=InnoDB DEFAULT CHARSET=latin1;
+) ENGINE=InnoDB DEFAULT CHARSET=latin1 COLLATE=latin1_swedish_ci;
 
 --
 -- Dumping data for table `notification_read`
@@ -467,7 +467,7 @@ CREATE TABLE `notification_read_teacher` (
   `teacher_id` int(11) NOT NULL,
   `student_read` varchar(100) NOT NULL,
   `notification_id` int(11) NOT NULL
-) ENGINE=InnoDB DEFAULT CHARSET=latin1;
+) ENGINE=InnoDB DEFAULT CHARSET=latin1 COLLATE=latin1_swedish_ci;
 
 --
 -- Dumping data for table `notification_read_teacher`
@@ -492,7 +492,7 @@ INSERT INTO `notification_read_teacher` (`notification_read_teacher_id`, `teache
 CREATE TABLE `question_type` (
   `question_type_id` int(11) NOT NULL,
   `question_type` varchar(150) NOT NULL
-) ENGINE=MyISAM DEFAULT CHARSET=latin1;
+) ENGINE=MyISAM DEFAULT CHARSET=latin1 COLLATE=latin1_swedish_ci;
 
 --
 -- Dumping data for table `question_type`
@@ -514,7 +514,7 @@ CREATE TABLE `quiz` (
   `quiz_description` varchar(100) NOT NULL,
   `date_added` varchar(100) NOT NULL,
   `teacher_id` int(11) NOT NULL
-) ENGINE=InnoDB DEFAULT CHARSET=latin1;
+) ENGINE=InnoDB DEFAULT CHARSET=latin1 COLLATE=latin1_swedish_ci;
 
 --
 -- Dumping data for table `quiz`
@@ -540,7 +540,7 @@ CREATE TABLE `quiz_question` (
   `points` int(11) NOT NULL,
   `date_added` varchar(100) NOT NULL,
   `answer` varchar(100) NOT NULL
-) ENGINE=InnoDB DEFAULT CHARSET=latin1;
+) ENGINE=InnoDB DEFAULT CHARSET=latin1 COLLATE=latin1_swedish_ci;
 
 --
 -- Dumping data for table `quiz_question`
@@ -563,7 +563,7 @@ INSERT INTO `quiz_question` (`quiz_question_id`, `quiz_id`, `question_text`, `qu
 CREATE TABLE `school_year` (
   `school_year_id` int(11) NOT NULL,
   `school_year` varchar(100) NOT NULL
-) ENGINE=InnoDB DEFAULT CHARSET=latin1;
+) ENGINE=InnoDB DEFAULT CHARSET=latin1 COLLATE=latin1_swedish_ci;
 
 --
 -- Dumping data for table `school_year`
@@ -588,7 +588,7 @@ CREATE TABLE `student` (
   `password` varchar(100) NOT NULL,
   `location` varchar(100) NOT NULL,
   `status` varchar(100) NOT NULL
-) ENGINE=MyISAM DEFAULT CHARSET=latin1;
+) ENGINE=MyISAM DEFAULT CHARSET=latin1 COLLATE=latin1_swedish_ci;
 
 --
 -- Dumping data for table `student`
@@ -720,7 +720,7 @@ CREATE TABLE `student_assignment` (
   `fname` varchar(50) NOT NULL,
   `student_id` int(11) NOT NULL,
   `grade` varchar(5) NOT NULL
-) ENGINE=InnoDB DEFAULT CHARSET=latin1;
+) ENGINE=InnoDB DEFAULT CHARSET=latin1 COLLATE=latin1_swedish_ci;
 
 --
 -- Dumping data for table `student_assignment`
@@ -742,7 +742,7 @@ CREATE TABLE `student_backpack` (
   `fdesc` varchar(100) NOT NULL,
   `student_id` int(11) NOT NULL,
   `fname` varchar(100) NOT NULL
-) ENGINE=InnoDB DEFAULT CHARSET=latin1;
+) ENGINE=InnoDB DEFAULT CHARSET=latin1 COLLATE=latin1_swedish_ci;
 
 --
 -- Dumping data for table `student_backpack`
@@ -766,7 +766,7 @@ CREATE TABLE `student_class_quiz` (
   `student_id` int(11) NOT NULL,
   `student_quiz_time` varchar(100) NOT NULL,
   `grade` varchar(100) NOT NULL
-) ENGINE=InnoDB DEFAULT CHARSET=latin1;
+) ENGINE=InnoDB DEFAULT CHARSET=latin1 COLLATE=latin1_swedish_ci;
 
 --
 -- Dumping data for table `student_class_quiz`
@@ -792,7 +792,7 @@ CREATE TABLE `subject` (
   `unit` int(11) NOT NULL,
   `Pre_req` varchar(100) NOT NULL,
   `semester` varchar(100) NOT NULL
-) ENGINE=MyISAM DEFAULT CHARSET=latin1;
+) ENGINE=MyISAM DEFAULT CHARSET=latin1 COLLATE=latin1_swedish_ci;
 
 --
 -- Dumping data for table `subject`
@@ -842,7 +842,7 @@ CREATE TABLE `teacher` (
   `about` varchar(500) NOT NULL,
   `teacher_status` varchar(20) NOT NULL,
   `teacher_stat` varchar(100) NOT NULL
-) ENGINE=MyISAM DEFAULT CHARSET=latin1;
+) ENGINE=MyISAM DEFAULT CHARSET=latin1 COLLATE=latin1_swedish_ci;
 
 --
 -- Dumping data for table `teacher`
@@ -873,7 +873,7 @@ CREATE TABLE `teacher_backpack` (
   `fdesc` varchar(100) NOT NULL,
   `teacher_id` int(11) NOT NULL,
   `fname` varchar(100) NOT NULL
-) ENGINE=InnoDB DEFAULT CHARSET=latin1;
+) ENGINE=InnoDB DEFAULT CHARSET=latin1 COLLATE=latin1_swedish_ci;
 
 -- --------------------------------------------------------
 
@@ -888,7 +888,7 @@ CREATE TABLE `teacher_class` (
   `subject_id` int(11) NOT NULL,
   `thumbnails` varchar(100) NOT NULL,
   `school_year` varchar(100) NOT NULL
-) ENGINE=InnoDB DEFAULT CHARSET=latin1;
+) ENGINE=InnoDB DEFAULT CHARSET=latin1 COLLATE=latin1_swedish_ci;
 
 --
 -- Dumping data for table `teacher_class`
@@ -935,7 +935,7 @@ CREATE TABLE `teacher_class_announcements` (
   `teacher_id` varchar(100) NOT NULL,
   `teacher_class_id` int(11) NOT NULL,
   `date` varchar(50) NOT NULL
-) ENGINE=InnoDB DEFAULT CHARSET=latin1;
+) ENGINE=InnoDB DEFAULT CHARSET=latin1 COLLATE=latin1_swedish_ci;
 
 --
 -- Dumping data for table `teacher_class_announcements`
@@ -964,7 +964,7 @@ CREATE TABLE `teacher_class_student` (
   `teacher_class_id` int(11) NOT NULL,
   `student_id` int(11) NOT NULL,
   `teacher_id` int(11) NOT NULL
-) ENGINE=InnoDB DEFAULT CHARSET=latin1;
+) ENGINE=InnoDB DEFAULT CHARSET=latin1 COLLATE=latin1_swedish_ci;
 
 --
 -- Dumping data for table `teacher_class_student`
@@ -1290,7 +1290,7 @@ CREATE TABLE `teacher_notification` (
   `link` varchar(100) NOT NULL,
   `student_id` int(11) NOT NULL,
   `assignment_id` int(11) NOT NULL
-) ENGINE=InnoDB DEFAULT CHARSET=latin1;
+) ENGINE=InnoDB DEFAULT CHARSET=latin1 COLLATE=latin1_swedish_ci;
 
 --
 -- Dumping data for table `teacher_notification`
@@ -1315,7 +1315,7 @@ CREATE TABLE `teacher_shared` (
   `fdatein` varchar(100) NOT NULL,
   `fdesc` varchar(100) NOT NULL,
   `fname` varchar(100) NOT NULL
-) ENGINE=InnoDB DEFAULT CHARSET=latin1;
+) ENGINE=InnoDB DEFAULT CHARSET=latin1 COLLATE=latin1_swedish_ci;
 
 --
 -- Dumping data for table `teacher_shared`
@@ -1335,17 +1335,22 @@ CREATE TABLE `users` (
   `username` varchar(100) NOT NULL,
   `password` varchar(100) NOT NULL,
   `firstname` varchar(100) NOT NULL,
-  `lastname` varchar(100) NOT NULL
-) ENGINE=InnoDB DEFAULT CHARSET=latin1;
+  `lastname` varchar(100) NOT NULL,
+  `role` int(11) NOT NULL,
+  `email` varchar(50) NOT NULL,
+  `mobile` varchar(50) NOT NULL,
+  `status` int(11) NOT NULL
+) ENGINE=InnoDB DEFAULT CHARSET=latin1 COLLATE=latin1_swedish_ci;
 
 --
 -- Dumping data for table `users`
 --
 
-INSERT INTO `users` (`user_id`, `username`, `password`, `firstname`, `lastname`) VALUES
-(13, 'teph', 'teph', 'Stephanie', 'villanueva'),
-(14, 'jkev', 'jkev', 'john kevin', 'lorayna'),
-(15, 'admin', 'admin', 'admin', 'admin');
+INSERT INTO `users` (`user_id`, `username`, `password`, `firstname`, `lastname`, `role`, `email`, `mobile`, `status`) VALUES
+(13, 'teph', 'teph', 'Stephanie', 'villanueva', 0, '', '', 0),
+(14, 'jkev', 'jkev', 'john kevin', 'lorayna', 0, '', '', 0),
+(15, 'admin', 'admin', 'admin', 'admin', 0, '', '', 0),
+(16, 'anuj', 'anuj', 'anuj', 'yadav', 1, 'anuj@gmail.com', '1234567890', 1);
 
 -- --------------------------------------------------------
 
@@ -1359,7 +1364,7 @@ CREATE TABLE `user_log` (
   `login_date` varchar(30) NOT NULL,
   `logout_date` varchar(30) NOT NULL,
   `user_id` int(11) NOT NULL
-) ENGINE=InnoDB DEFAULT CHARSET=latin1;
+) ENGINE=InnoDB DEFAULT CHARSET=latin1 COLLATE=latin1_swedish_ci;
 
 --
 -- Dumping data for table `user_log`
@@ -1388,69 +1393,82 @@ INSERT INTO `user_log` (`user_log_id`, `username`, `login_date`, `logout_date`, 
 (20, 'admin', '2013-11-14 22:03:53', '2013-11-18 10:33:54', 10),
 (21, 'admin', '2013-11-16 13:40:56', '2013-11-18 10:33:54', 10),
 (22, 'admin', '2013-11-18 10:22:07', '2013-11-18 10:33:54', 10),
-(23, 'jkev', '2013-11-18 10:33:59', '2014-02-13 11:19:36', 14),
-(24, 'jkev', '2013-11-18 15:20:45', '2014-02-13 11:19:36', 14),
-(25, 'jkev', '2013-11-18 15:42:04', '2014-02-13 11:19:36', 14),
-(26, 'jkev', '2013-11-18 16:30:14', '2014-02-13 11:19:36', 14),
-(27, 'jkev', '2013-11-18 16:36:44', '2014-02-13 11:19:36', 14),
-(28, 'jkev', '2013-11-18 17:39:55', '2014-02-13 11:19:36', 14),
-(29, 'jkev', '2013-11-18 20:06:49', '2014-02-13 11:19:36', 14),
-(30, 'jkev', '2013-11-23 08:04:27', '2014-02-13 11:19:36', 14),
+(23, 'jkev', '2013-11-18 10:33:59', '2024-06-01 10:34:26', 14),
+(24, 'jkev', '2013-11-18 15:20:45', '2024-06-01 10:34:26', 14),
+(25, 'jkev', '2013-11-18 15:42:04', '2024-06-01 10:34:26', 14),
+(26, 'jkev', '2013-11-18 16:30:14', '2024-06-01 10:34:26', 14),
+(27, 'jkev', '2013-11-18 16:36:44', '2024-06-01 10:34:26', 14),
+(28, 'jkev', '2013-11-18 17:39:55', '2024-06-01 10:34:26', 14),
+(29, 'jkev', '2013-11-18 20:06:49', '2024-06-01 10:34:26', 14),
+(30, 'jkev', '2013-11-23 08:04:27', '2024-06-01 10:34:26', 14),
 (31, 'teph', '2013-11-23 12:02:27', '2013-11-30 21:33:02', 13),
 (32, 'teph', '2013-11-24 08:55:55', '2013-11-30 21:33:02', 13),
-(33, 'jkev', '2013-11-25 10:32:16', '2014-02-13 11:19:36', 14),
-(34, 'jkev', '2013-11-25 14:33:05', '2014-02-13 11:19:36', 14),
-(35, 'jkev', '2013-11-25 15:02:47', '2014-02-13 11:19:36', 14),
-(36, 'jkev', '2013-11-25 21:08:19', '2014-02-13 11:19:36', 14),
-(37, 'jkev', '2013-11-25 23:49:58', '2014-02-13 11:19:36', 14),
-(38, 'jkev', '2013-11-26 00:32:22', '2014-02-13 11:19:36', 14),
-(39, 'jkev', '2013-11-26 10:39:52', '2014-02-13 11:19:36', 14),
-(40, 'jkev', '2013-11-26 21:48:05', '2014-02-13 11:19:36', 14),
-(41, 'jkev', '2013-11-28 23:00:00', '2014-02-13 11:19:36', 14),
-(42, 'jkev', '2013-11-28 23:00:06', '2014-02-13 11:19:36', 14),
-(43, 'jkev', '2013-11-30 21:28:54', '2014-02-13 11:19:36', 14),
+(33, 'jkev', '2013-11-25 10:32:16', '2024-06-01 10:34:26', 14),
+(34, 'jkev', '2013-11-25 14:33:05', '2024-06-01 10:34:26', 14),
+(35, 'jkev', '2013-11-25 15:02:47', '2024-06-01 10:34:26', 14),
+(36, 'jkev', '2013-11-25 21:08:19', '2024-06-01 10:34:26', 14),
+(37, 'jkev', '2013-11-25 23:49:58', '2024-06-01 10:34:26', 14),
+(38, 'jkev', '2013-11-26 00:32:22', '2024-06-01 10:34:26', 14),
+(39, 'jkev', '2013-11-26 10:39:52', '2024-06-01 10:34:26', 14),
+(40, 'jkev', '2013-11-26 21:48:05', '2024-06-01 10:34:26', 14),
+(41, 'jkev', '2013-11-28 23:00:00', '2024-06-01 10:34:26', 14),
+(42, 'jkev', '2013-11-28 23:00:06', '2024-06-01 10:34:26', 14),
+(43, 'jkev', '2013-11-30 21:28:54', '2024-06-01 10:34:26', 14),
 (44, 'teph', '2013-11-30 21:32:54', '2013-11-30 21:33:02', 13),
-(45, 'jkev', '2013-12-04 12:45:09', '2014-02-13 11:19:36', 14),
+(45, 'jkev', '2013-12-04 12:45:09', '2024-06-01 10:34:26', 14),
 (46, 'teph', '2013-12-04 14:02:19', '', 13),
-(47, 'jkev', '2013-12-11 11:56:15', '2014-02-13 11:19:36', 14),
-(48, 'jkev', '2013-12-11 12:04:44', '2014-02-13 11:19:36', 14),
-(49, 'jkev', '2013-12-12 09:44:34', '2014-02-13 11:19:36', 14),
-(50, 'jkev', '2013-12-13 01:48:23', '2014-02-13 11:19:36', 14),
-(51, 'jkev', '2013-12-27 09:13:20', '2014-02-13 11:19:36', 14),
-(52, 'jkev', '2013-12-27 10:18:38', '2014-02-13 11:19:36', 14),
-(53, 'jkev', '2013-12-27 10:35:43', '2014-02-13 11:19:36', 14),
-(54, 'jkev', '2013-12-27 11:08:54', '2014-02-13 11:19:36', 14),
-(55, 'jkev', '2013-12-27 11:20:25', '2014-02-13 11:19:36', 14),
-(56, 'jkev', '2013-12-27 11:41:58', '2014-02-13 11:19:36', 14),
-(57, 'jkev', '2013-12-27 11:43:10', '2014-02-13 11:19:36', 14),
-(58, 'jkev', '2013-12-27 14:54:57', '2014-02-13 11:19:36', 14),
-(59, 'jkev', '2014-01-12 20:08:26', '2014-02-13 11:19:36', 14),
-(60, 'jkev', '2014-01-13 15:24:07', '2014-02-13 11:19:36', 14),
-(61, 'jkev', '2014-01-13 18:46:08', '2014-02-13 11:19:36', 14),
-(62, 'jkev', '2014-01-15 20:40:15', '2014-02-13 11:19:36', 14),
-(63, 'jkev', '2014-01-16 14:42:02', '2014-02-13 11:19:36', 14),
-(64, 'jkev', '2014-01-17 09:16:17', '2014-02-13 11:19:36', 14),
-(65, 'jkev', '2014-01-17 13:25:51', '2014-02-13 11:19:36', 14),
-(66, 'admin', '2014-01-17 14:41:30', '2020-12-21 08:48:16', 15),
-(67, 'admin', '2014-01-17 15:56:32', '2020-12-21 08:48:16', 15),
-(68, 'admin', '2014-01-26 17:45:31', '2020-12-21 08:48:16', 15),
-(69, 'admin', '2014-02-13 10:45:17', '2020-12-21 08:48:16', 15),
-(70, 'admin', '2014-02-13 11:05:27', '2020-12-21 08:48:16', 15),
-(71, 'jkev', '2014-02-13 11:16:48', '2014-02-13 11:19:36', 14),
-(72, 'admin', '2014-02-13 11:55:36', '2020-12-21 08:48:16', 15),
-(73, 'admin', '2014-02-13 12:32:38', '2020-12-21 08:48:16', 15),
-(74, 'admin', '2014-02-13 12:52:05', '2020-12-21 08:48:16', 15),
-(75, 'admin', '2014-02-13 13:04:35', '2020-12-21 08:48:16', 15),
-(76, 'jkev', '2014-02-13 14:35:27', '', 14),
-(77, 'admin', '2014-02-20 09:40:39', '2020-12-21 08:48:16', 15),
-(78, 'admin', '2014-02-20 09:42:21', '2020-12-21 08:48:16', 15),
-(79, 'admin', '2014-02-27 22:40:15', '2020-12-21 08:48:16', 15),
-(80, 'admin', '2014-02-28 13:12:52', '2020-12-21 08:48:16', 15),
-(81, 'admin', '2014-04-02 17:27:47', '2020-12-21 08:48:16', 15),
-(82, 'admin', '2014-04-03 15:29:38', '2020-12-21 08:48:16', 15),
-(83, 'admin', '2014-06-15 12:31:51', '2020-12-21 08:48:16', 15),
-(84, 'Admin', '2020-12-21 08:32:51', '2020-12-21 08:48:16', 15),
-(85, 'admin', '2020-12-21 08:48:23', '', 15);
+(47, 'jkev', '2013-12-11 11:56:15', '2024-06-01 10:34:26', 14),
+(48, 'jkev', '2013-12-11 12:04:44', '2024-06-01 10:34:26', 14),
+(49, 'jkev', '2013-12-12 09:44:34', '2024-06-01 10:34:26', 14),
+(50, 'jkev', '2013-12-13 01:48:23', '2024-06-01 10:34:26', 14),
+(51, 'jkev', '2013-12-27 09:13:20', '2024-06-01 10:34:26', 14),
+(52, 'jkev', '2013-12-27 10:18:38', '2024-06-01 10:34:26', 14),
+(53, 'jkev', '2013-12-27 10:35:43', '2024-06-01 10:34:26', 14),
+(54, 'jkev', '2013-12-27 11:08:54', '2024-06-01 10:34:26', 14),
+(55, 'jkev', '2013-12-27 11:20:25', '2024-06-01 10:34:26', 14),
+(56, 'jkev', '2013-12-27 11:41:58', '2024-06-01 10:34:26', 14),
+(57, 'jkev', '2013-12-27 11:43:10', '2024-06-01 10:34:26', 14),
+(58, 'jkev', '2013-12-27 14:54:57', '2024-06-01 10:34:26', 14),
+(59, 'jkev', '2014-01-12 20:08:26', '2024-06-01 10:34:26', 14),
+(60, 'jkev', '2014-01-13 15:24:07', '2024-06-01 10:34:26', 14),
+(61, 'jkev', '2014-01-13 18:46:08', '2024-06-01 10:34:26', 14),
+(62, 'jkev', '2014-01-15 20:40:15', '2024-06-01 10:34:26', 14),
+(63, 'jkev', '2014-01-16 14:42:02', '2024-06-01 10:34:26', 14),
+(64, 'jkev', '2014-01-17 09:16:17', '2024-06-01 10:34:26', 14),
+(65, 'jkev', '2014-01-17 13:25:51', '2024-06-01 10:34:26', 14),
+(66, 'admin', '2014-01-17 14:41:30', '2024-06-01 11:52:29', 15),
+(67, 'admin', '2014-01-17 15:56:32', '2024-06-01 11:52:29', 15),
+(68, 'admin', '2014-01-26 17:45:31', '2024-06-01 11:52:29', 15),
+(69, 'admin', '2014-02-13 10:45:17', '2024-06-01 11:52:29', 15),
+(70, 'admin', '2014-02-13 11:05:27', '2024-06-01 11:52:29', 15),
+(71, 'jkev', '2014-02-13 11:16:48', '2024-06-01 10:34:26', 14),
+(72, 'admin', '2014-02-13 11:55:36', '2024-06-01 11:52:29', 15),
+(73, 'admin', '2014-02-13 12:32:38', '2024-06-01 11:52:29', 15),
+(74, 'admin', '2014-02-13 12:52:05', '2024-06-01 11:52:29', 15),
+(75, 'admin', '2014-02-13 13:04:35', '2024-06-01 11:52:29', 15),
+(76, 'jkev', '2014-02-13 14:35:27', '2024-06-01 10:34:26', 14),
+(77, 'admin', '2014-02-20 09:40:39', '2024-06-01 11:52:29', 15),
+(78, 'admin', '2014-02-20 09:42:21', '2024-06-01 11:52:29', 15),
+(79, 'admin', '2014-02-27 22:40:15', '2024-06-01 11:52:29', 15),
+(80, 'admin', '2014-02-28 13:12:52', '2024-06-01 11:52:29', 15),
+(81, 'admin', '2014-04-02 17:27:47', '2024-06-01 11:52:29', 15),
+(82, 'admin', '2014-04-03 15:29:38', '2024-06-01 11:52:29', 15),
+(83, 'admin', '2014-06-15 12:31:51', '2024-06-01 11:52:29', 15),
+(84, 'Admin', '2020-12-21 08:32:51', '2024-06-01 11:52:29', 15),
+(85, 'admin', '2020-12-21 08:48:23', '2024-06-01 11:52:29', 15),
+(86, 'admin', '2024-05-31 00:17:14', '2024-06-01 11:52:29', 15),
+(87, 'jkev', '2024-06-01 10:19:25', '2024-06-01 10:34:26', 14),
+(88, 'anuj', '2024-06-01 10:34:30', '2024-06-01 11:51:17', 16),
+(89, 'admin', '2024-06-01 11:30:51', '2024-06-01 11:52:29', 15),
+(90, 'admin', '2024-06-01 11:31:32', '2024-06-01 11:52:29', 15),
+(91, 'admin', '2024-06-01 11:32:02', '2024-06-01 11:52:29', 15),
+(92, 'anuj', '2024-06-01 11:32:16', '2024-06-01 11:51:17', 16),
+(93, 'admin', '2024-06-01 11:37:42', '2024-06-01 11:52:29', 15),
+(94, 'anuj', '2024-06-01 11:38:02', '2024-06-01 11:51:17', 16),
+(95, 'admin', '2024-06-01 11:45:53', '2024-06-01 11:52:29', 15),
+(96, 'anuj', '2024-06-01 11:46:13', '2024-06-01 11:51:17', 16),
+(97, 'admin', '2024-06-01 11:51:23', '2024-06-01 11:52:29', 15),
+(98, 'anuj', '2024-06-01 11:52:40', '', 16);
 
 --
 -- Indexes for dumped tables
@@ -1842,13 +1860,13 @@ ALTER TABLE `teacher_shared`
 -- AUTO_INCREMENT for table `users`
 --
 ALTER TABLE `users`
-  MODIFY `user_id` int(11) NOT NULL AUTO_INCREMENT, AUTO_INCREMENT=16;
+  MODIFY `user_id` int(11) NOT NULL AUTO_INCREMENT, AUTO_INCREMENT=17;
 
 --
 -- AUTO_INCREMENT for table `user_log`
 --
 ALTER TABLE `user_log`
-  MODIFY `user_log_id` int(11) NOT NULL AUTO_INCREMENT, AUTO_INCREMENT=86;
+  MODIFY `user_log_id` int(11) NOT NULL AUTO_INCREMENT, AUTO_INCREMENT=99;
 COMMIT;
 
 /*!40101 SET CHARACTER_SET_CLIENT=@OLD_CHARACTER_SET_CLIENT */;
