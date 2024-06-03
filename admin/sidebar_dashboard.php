@@ -2,7 +2,7 @@
                     <ul class="nav nav-list bs-docs-sidenav nav-collapse collapse">
 
                         <li class="active"> <a href="dashboard.php"><i class="icon-chevron-right"></i><i class="icon-home"></i>&nbsp;Dashboard</a> </li>
-                        <?php if($_SESSION['ADMIN_ROLE']!=1){?>
+                        <?php if($_SESSION['ADMIN_ROLE']==0){?>
 
                         <li>
                             <a href="teachers.php"><i class="icon-chevron-right"></i><i class="icon-group"></i> Teachers</a>
@@ -27,6 +27,10 @@
 						
 						<li>
                             <a href="students.php"><i class="icon-chevron-right"></i><i class="icon-group"></i> Students</a>
+                        </li>
+
+                        <li>
+                            <a href="followup.php"><i class="icon-chevron-right"></i><i class="icon-group"></i> Follow Up</a>
                         </li>
 						
 						<li>

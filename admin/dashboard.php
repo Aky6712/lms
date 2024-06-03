@@ -68,6 +68,20 @@
 
                                     </div>
                                 </div>
+
+
+                                <?php 
+								$query_student = mysqli_query($conn,"select * from student")or die(mysqli_error());
+								$count_student = mysqli_num_rows($query_student);
+								?>
+								
+                                <div class="span3">
+                                    <div class="chart" data-percent="<?php echo $count_student ?>"><?php echo $count_student ?></div>
+                                    <div class="chart-bottom-heading"><strong>Follow Up</strong>
+
+                                    </div>
+                                </div>
+								
 								
 								
 								
