@@ -1,11 +1,11 @@
   <div class="navbar navbar-fixed-top navbar-inverse">
             <div class="navbar-inner">
-                <div class="container-fluid">
+                <div class="container-fluid" style="background-color: #a2c1f2;">
                     <a class="btn btn-navbar" data-toggle="collapse" data-target=".nav-collapse"> <span class="icon-bar"></span>
                      <span class="icon-bar"></span>
                      <span class="icon-bar"></span>
                     </a>
-                    <span class="brand" href="#">M - Learning ADMIN Panel</span>
+                    <span class="brand" href="#" ><img src="logo.png" alt="Logo" class="img-fluid" style="height: 40px;"> </span>
                     <div class="nav-collapse collapse">
                         <ul class="nav pull-right">
 						<?php $query= mysqli_query($conn,"select * from users where user_id = '$session_id'")or die(mysqli_error());

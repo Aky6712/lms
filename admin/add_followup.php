@@ -24,40 +24,46 @@
                                           </div>
                                         </div>
 								
-										
-										
 										<div class="control-group">
                                           <div class="controls">
-                                            <input name="fn" class="input focused" id="focusedInput" type="text" placeholder = "Firstname" required>
+                                            <input name="tdate" class="input focused" id="focusedInput" type="date" placeholder = "Today's date" required>
                                           </div>
                                         </div>
 										
 										<div class="control-group">
                                           <div class="controls">
-                                            <input  name="ln" class="input focused" id="focusedInput" type="text" placeholder = "Lastname" required>
+                                            <input name="fname" class="input focused" id="focusedInput" type="text" placeholder = "Firstname" required>
+                                          </div>
+                                        </div>
+										
+										<div class="control-group">
+                                          <div class="controls">
+                                            <input  name="lname" class="input focused" id="focusedInput" type="text" placeholder = "Lastname" required>
                                           </div>
                                         </div>
 
 										<div class="control-group">
                                           <div class="controls">
-                                            <input name="un" class="input focused" id="focusedInput" type="number" placeholder = "Phone Number" required>
+                                            <input name="phonenum" class="input focused" id="focusedInput" type="number" placeholder = "Phone Number" required>
                                           </div>
                                         </div>
 
 										<div class="control-group">
                                           <div class="controls">
-                                            <input name="un" class="input focused" id="focusedInput" type="number" placeholder = "Cost" required>
-                                          </div>
-                                        </div>
-										<div class="control-group">
-                                          <div class="controls">
-                                            <input name="un" class="input focused" id="focusedInput" type="date" placeholder = "FollowUp date" required>
+                                            <input name="cost" class="input focused" id="focusedInput" type="number" placeholder = "Cost" required>
                                           </div>
                                         </div>
 
 										<div class="control-group">
                                           <div class="controls">
-                                            <textarea name="un" class="input focused" id="focusedInput"  placeholder = "Add your note here"" required></textarea>
+                                            <input name="fdate" class="input focused" id="focusedInput" type="date" placeholder = "FollowUp date" required>
+                                          </div>
+                                        </div>
+										
+
+										<div class="control-group">
+                                          <div class="controls">
+                                            <textarea name="note" class="input focused" id="focusedInput"  placeholder = "Add your note here"" required></textarea>
                                           </div>
                                         </div>
 
@@ -67,7 +73,6 @@
 											<div class="control-group">
                                           <div class="controls">
 												<button name="save" class="btn btn-info"><i class="icon-plus-sign icon-large"></i></button>
-
                                           </div>
                                         </div>
                                 </form>
@@ -85,11 +90,11 @@
 					var formData = $(this).serialize();
 					$.ajax({
 						type: "POST",
-						url: "save_student.php",
+						url: "save_followup.php",
 						data: formData,
 						success: function(html){
 							$.jGrowl("Student Successfully  Added", { header: 'Student Added' });
-							$('#studentTableDiv').load('student_table.php', function(response){
+							$('#studentTableDiv').load('followup_table.php', function(response){
 								$("#studentTableDiv").html(response);
 								$('#example').dataTable( {
 									"sDom": "<'row'<'span6'l><'span6'f>r>t<'row'<'span6'i><'span6'p>>",

@@ -30,6 +30,11 @@
                                             <input class="input focused" name="password" id="focusedInput" type="text" placeholder = "Password" required>
                                           </div>
                                         </div>
+										<div class="control-group">
+                                          <div class="controls">
+                                            <input class="input focused" name="role" id="focusedInput" type="number" placeholder = "Role" required>
+                                          </div>
+                                        </div>
 										
 											<div class="control-group">
                                           <div class="controls">
@@ -52,9 +57,10 @@ $firstname = $_POST['firstname'];
 $lastname = $_POST['lastname'];
 $username = $_POST['username'];
 $password = $_POST['password'];
+$role = $_POST['role'];
 
 
-$query = mysqli_query($conn,"select * from users where username = '$username' and password = '$password' and firstname = '$firstname' and password = '$password' ")or die(mysqli_error());
+$query = mysqli_query($conn,"select * from users where username = '$username' and password = '$password' and firstname = '$firstname' and password = '$password' and role = '$role' ")or die(mysqli_error());
 $count = mysqli_num_rows($query);
 
 if ($count > 0){ ?>
@@ -63,7 +69,7 @@ alert('Data Already Exist');
 </script>
 <?php
 }else{
-mysqli_query($conn,"insert into users (username,password,firstname,lastname) values('$username','$password','$firstname','$lastname')")or die(mysqli_error());
+mysqli_query($conn,"insert into users (username,password,firstname,lastname,role) values('$username','$password','$firstname','$lastname','role')")or die(mysqli_error());
 
 mysqli_query($conn,"insert into activity_log (date,username,action) values(NOW(),'$user_username','Add User $username')")or die(mysqli_error());
 ?>

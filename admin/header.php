@@ -4,6 +4,7 @@
         <title>Learning Management System</title>
         <!-- Bootstrap -->
 			<!-- <link href="images/logo.png" rel="icon" type="image"> -->
+			
 			<link href="bootstrap/css/bootstrap.min.css" rel="stylesheet" media="screen">
 			<link href="bootstrap/css/bootstrap-responsive.min.css" rel="stylesheet" media="screen">
 			<link href="bootstrap/css/font-awesome.css" rel="stylesheet" media="screen">

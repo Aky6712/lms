@@ -45,7 +45,7 @@
  $dn = $_POST['dn'];
  $d = $_POST['d'];
  
- mysqli_query($conn,"update department set department_name = '$dn' , dean  = '$d' where department_id = '$get_id' ")or die(mysqli_error());
+ mysqli_query($conn,"update department set department_name = '$d' , dean  = '$dn' where department_id = '$get_id' ")or die(mysqli_error());
  ?>
  <script>
  window.location='department.php'; 

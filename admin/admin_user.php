@@ -5,7 +5,7 @@
         <div class="container-fluid">
             <div class="row-fluid">
 				<?php include('admin_sidebar.php'); ?>
-				<div class="span3" id="adduser">
+				<div class="span3" id="adduser"> 
 				<?php include('add_user.php'); ?>		   			
 				</div>
                 <div class="span6" id="">
